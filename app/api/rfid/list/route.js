@@ -8,7 +8,7 @@ export async function GET() {
     // all cards
     const { data: cards, error: cardsError } = await supabaseAdmin
       .from("rfid_cards")
-      .select("rfid_uid, status");
+      .select("rfid_uid, status, assigned_id, role");
     if (cardsError) throw cardsError;
 
     // all currently-active visitors
