@@ -55,6 +55,7 @@ export default function DashboardPage() {
           <thead>
             <tr className="border-b text-left">
               <th className="py-2 pr-4">RFID UID</th>
+    <th className="py-2 pr-4">Role</th>
               <th className="py-2 pr-4">Status</th>
               <th className="py-2 pr-4">Visitor</th>
               <th className="py-2 pr-4">Members</th>
@@ -66,7 +67,8 @@ export default function DashboardPage() {
           <tbody>
             {cards.map((c) => (
               <tr key={c.rfid_uid} className="border-b">
-                <td className="py-2 pr-4">{c.rfid_uid}</td>
+                <td className="py-2 pr-4">{c.assigned_id}</td>
+  <td className="py-2 pr-4">{c.role ?? "-"}</td>
                 <td className="py-2 pr-4">{c.status}</td>
                 <td className="py-2 pr-4">{c.visitor?.person_name ?? "-"}</td>
                 <td className="py-2 pr-4">
